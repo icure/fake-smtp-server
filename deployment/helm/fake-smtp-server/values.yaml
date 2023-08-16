@@ -1,0 +1,25 @@
+pullPolicy: "IfNotPresent"
+
+ingressClassName: "haproxy"
+
+tls:
+    -   secretName: mail-icure-dev
+        hosts:
+            - mail.icure.dev
+
+images:
+    backend:
+        repository: "docker.taktik.be/fake-smtp-server"
+        tag: "0.1.5"
+        replicaCount: 1
+        javaOpts: "-Xmx96m" # config
+        memoryRequest: "256M"
+        memoryLimit: "384M"
+        cpuRequest: 100m
+        cpuLimit: 1
+        debug: true
+        virtualHosts: [ "mail.icure.dev" ]
+        readiness: true
+        liveness: true
+        env:
+            FAKESMTP_WHITELISTEDRECIPIENTADDRESSES_0: "@dev.icure.dev" # config

@@ -37,8 +37,8 @@ class BlockedRecipientAddressesTest {
     }
 
     @Test
-    void shouldReturnFalseWhenRecipientIsNull(){
-        assertFalse(sut.isBlocked(null));
+    void shouldReturnTrueWhenRecipientIsNull(){
+        assertTrue(sut.isBlocked(null));
     }
 
     @Test

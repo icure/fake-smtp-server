@@ -20,6 +20,7 @@ public class FakeSmtpConfigurationProperties {
     private Integer port = DEFAULT_PORT;
     private InetAddress bindAddress;
     private Authentication authentication;
+    private List<String> whiteListedRecipientAddresses = new ArrayList<>();
     private List<String> blockedRecipientAddresses = new ArrayList<>();
     private String filteredEmailRegexList;
 
@@ -60,6 +61,14 @@ public class FakeSmtpConfigurationProperties {
 
     public void setPersistence(Persistence persistence) {
         this.persistence = persistence;
+    }
+
+    public List<String> getWhiteListedRecipientAddresses() {
+        return whiteListedRecipientAddresses;
+    }
+
+    public void setWhiteListedRecipientAddresses(List<String> whiteListedRecipientAddresses) {
+        this.whiteListedRecipientAddresses = whiteListedRecipientAddresses;
     }
 
     public List<String> getBlockedRecipientAddresses() {
