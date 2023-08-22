@@ -9,6 +9,7 @@
 The Fake SMTP Server is a simple SMTP server which is designed for development purposes. The server collects all
 received emails, stores the emails in an in-memory database and provides access to the emails via a web interface.
 
+
 There is no POP3 or IMAP interface included by intention. The basic idea of this software is that it is used during 
 development to configure the server as target mail server. Instead of sending the emails to a real SMTP server which 
 would forward the mails to the target recipient or return with mail undelivery for test email addresses (e.g. 
