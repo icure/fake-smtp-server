@@ -16,7 +16,7 @@ images:
         memoryRequest: "256M"
         memoryLimit: "384M"
         cpuRequest: 100m
-        cpuLimit: 1
+        cpuLimit: 100m
         debug: true
         virtualHosts: [ "mail.icure.dev" ]
         readiness: true
