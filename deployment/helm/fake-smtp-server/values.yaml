@@ -12,11 +12,11 @@ images:
         repository: "docker.taktik.be/fake-smtp-server"
         tag: "0.1.5"
         replicaCount: 1
-        javaOpts: "-Xmx96m" # config
+        javaOpts: "-Xmx128m" # config
         memoryRequest: "256M"
         memoryLimit: "384M"
         cpuRequest: 100m
-        cpuLimit: 100m
+        cpuLimit: 200m
         debug: true
         virtualHosts: [ "mail.icure.dev" ]
         readiness: true
